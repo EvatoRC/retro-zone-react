@@ -1,0 +1,129 @@
+:root {
+  --win-gris: #c0c0c0;
+  --win-gris-claro: #ececec;
+  --win-gris-oscuro: #808080;
+  --win-negro: #000000;
+  --win-blanco: #ffffff;
+  --win-azul: #000080;
+  --win-celeste: #1084d0;
+  --color-rojo: rgb(140, 45, 10);
+  --color-verde: rgb(20, 100, 35);
+  --font-type: 'Tahoma', 'Segoe UI', Verdana, Arial, sans-serif;
+  --borde-outset: 2px outset var(--win-gris-claro);
+  --borde-inset: 2px inset var(--win-gris-claro);
+}
+
+body {
+  background-color: var(--win-gris-oscuro);
+  color: var(--win-negro);
+  font-family: var(--font-type);
+}
+
+.window {
+  max-width: 1100px;
+  margin: 2rem auto;
+  background-color: var(--win-gris);
+  border: 2px solid var(--win-blanco);
+  border-right-color: var(--win-negro);
+  border-bottom-color: var(--win-negro);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.navbar-retro {
+  background-color: var(--win-gris);
+  border-bottom: 2px solid var(--win-gris-oscuro);
+  padding: 0.5rem 1rem;
+}
+.navbar-retro .navbar-brand { font-weight: 700; color: var(--win-negro); }
+.navbar-retro .nav-link {
+  background-color: var(--win-gris);
+  border: var(--borde-outset);
+  padding: 0.35rem 0.7rem !important;
+  color: var(--win-negro) !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.contador-carrito {
+  display: inline-block;
+  min-width: 1.2rem;
+  padding: 0 0.3rem;
+  background: var(--color-rojo);
+  color: var(--win-blanco);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.section-title {
+  margin: 1.5rem 0 1rem;
+  font-weight: 700;
+}
+
+.input-retro {
+  border: var(--borde-inset);
+  background-color: var(--win-blanco);
+}
+
+.btn-retro {
+  background-color: var(--win-gris);
+  border: var(--borde-outset);
+  color: var(--win-negro);
+  font-weight: 600;
+}
+.btn-retro:hover { background-color: var(--win-gris-claro); }
+.btn-retro:active { border: var(--borde-inset); }
+
+.product-card {
+  position: relative;
+  border: var(--borde-outset);
+  background-color: var(--win-gris-claro);
+}
+.product-card img { object-fit: cover; height: 180px; }
+
+.badge-oferta {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+  background-color: var(--color-rojo);
+  color: var(--win-blanco);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.precio-normal { font-weight: 700; }
+.precio-normal-tachado {
+  text-decoration: line-through;
+  color: var(--win-gris-oscuro);
+  font-size: 0.85rem;
+}
+.precio-oferta {
+  font-weight: 700;
+  color: var(--color-rojo);
+}
+
+.panel-retro {
+  background-color: var(--win-gris);
+  border: var(--borde-outset);
+  padding: 1rem;
+}
+
+.table-retro th, .table-retro td {
+  vertical-align: middle;
+}
+
+.cart-total-valor { color: var(--color-verde); }
+
+.catalogo-estado {
+  font-style: italic;
+  color: var(--win-gris-oscuro);
+}
+
+.site-footer {
+  background-color: var(--win-gris);
+  border-top: 2px solid var(--win-gris-oscuro);
+  padding: 1rem;
+  text-align: center;
+}
