@@ -1,0 +1,72 @@
+[
+  {
+    "id": "doom",
+    "nombre": "Doom",
+    "categoria": "shooters",
+    "precioNormal": 9990,
+    "precioOferta": 7990,
+    "enOferta": true,
+    "imagen": "img/doom.jpg",
+    "descripcion": "Acción frenética, demonios y toneladas de balas; un clásico que definió el género de los shooters en primera persona."
+  },
+  {
+    "id": "duke-nukem-3d",
+    "nombre": "Duke Nukem 3D",
+    "categoria": "shooters",
+    "precioNormal": 8990,
+    "precioOferta": null,
+    "enOferta": false,
+    "imagen": "img/duke_nukem_3d.jpg",
+    "descripcion": "Humor irreverente, armas descomunales y acción desenfrenada en uno de los grandes clásicos de los shooters de los 90."
+  },
+  {
+    "id": "heretic",
+    "nombre": "Heretic",
+    "categoria": "shooters",
+    "precioNormal": 7990,
+    "precioOferta": 5990,
+    "enOferta": true,
+    "imagen": "img/heretic.jpg",
+    "descripcion": "Magia oscura, monstruos infernales y combates frenéticos en un clásico de fantasía oscura nacido de la era dorada de los FPS."
+  },
+  {
+    "id": "age-of-empires",
+    "nombre": "Age of Empires: Definitive Edition",
+    "categoria": "estrategia",
+    "precioNormal": 14990,
+    "precioOferta": 11990,
+    "enOferta": true,
+    "imagen": "img/age_of_empires.jpg",
+    "descripcion": "Lidera civilizaciones antiguas, desde griegos hasta babilonios, en el remaster del RTS histórico que marcó una época."
+  },
+  {
+    "id": "age-of-mythology",
+    "nombre": "Age of Mythology",
+    "categoria": "estrategia",
+    "precioNormal": 12990,
+    "precioOferta": null,
+    "enOferta": false,
+    "imagen": "img/age_of_mythology.jpg",
+    "descripcion": "Dioses, mitos y héroes legendarios de Grecia, Egipto y Escandinavia se unen en este clásico de Ensemble Studios."
+  },
+  {
+    "id": "starcraft-brood-war",
+    "nombre": "StarCraft: Brood War",
+    "categoria": "estrategia",
+    "precioNormal": 11990,
+    "precioOferta": 9990,
+    "enOferta": true,
+    "imagen": "img/starcraft_broodwar.jpg",
+    "descripcion": "Terran, Zerg y Protoss en guerra por la galaxia; la expansión que convirtió a StarCraft en leyenda del esport."
+  },
+  {
+    "id": "warcraft-frozen-throne",
+    "nombre": "Warcraft III: The Frozen Throne",
+    "categoria": "estrategia",
+    "precioNormal": 13990,
+    "precioOferta": null,
+    "enOferta": false,
+    "imagen": "img/warcraft_frozen_throne.jpg",
+    "descripcion": "La expansión que consolidó la saga de Warcraft como referente absoluto del RTS, con la caída y ascenso del Rey Exánime."
+  }
+]

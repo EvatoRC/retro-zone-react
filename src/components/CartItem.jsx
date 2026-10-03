@@ -13,7 +13,7 @@ function CartItem({ item, onEliminar }) {
         <button
           type="button"
           className="btn btn-retro btn-sm"
-          onClick={() => onEliminar(item.uniqueId)}
+          onClick={() => onEliminar(item.productoId)}
           aria-label={`Eliminar ${item.nombre} del carrito`}
         >
           🗑️ Eliminar

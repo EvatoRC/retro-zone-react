@@ -2,19 +2,20 @@ import { useState } from 'react'
 import Navbar from './components/Navbar'
 import ProductList from './components/ProductList'
 import ShoppingCart from './components/ShoppingCart'
-import productos from './data/productos'
 
 /**
  * App
  * Componente raíz de la aplicación. Aquí vive el estado del carrito
- * (cart), ya que tanto el Navbar (contador), el ProductList (botón
- * "Agregar") como el ShoppingCart (listado + total) necesitan
+ * (cart), ya que el Navbar (contador), el ProductList (botón
+ * "Agregar") y el ShoppingCart (listado + total) necesitan
  * leerlo o modificarlo.
+ *
+ * El catálogo de productos NO vive aquí: lo carga ProductList con
+ * useEffect desde public/data/productos.json.
  */
 function App() {
-  // Estado del carrito: array de items. Cada item guarda los datos del
-  // producto + un uniqueId propio, para poder agregar el mismo juego
-  // varias veces y luego eliminar solo una de esas copias.
+  // Estado del carrito: array de items { productoId, nombre, precioUnitario }.
+  // Cada juego se puede tener una sola vez en el carrito (son juegos digitales).
   const [cart, setCart] = useState([])
 
   // Agrega un producto al carrito. Usa el precio de oferta si el
@@ -22,23 +23,25 @@ function App() {
   const addToCart = (producto) => {
     const precioUnitario = producto.enOferta ? producto.precioOferta : producto.precioNormal
 
-    const nuevoItem = {
-      uniqueId: `${producto.id}-${Date.now()}-${Math.random().toString(16).slice(2)}`,
-      productoId: producto.id,
-      nombre: producto.nombre,
-      precioUnitario,
-    }
-
-    setCart((carritoActual) => [...carritoActual, nuevoItem])
+    setCart((carritoActual) => {
+      // Si ya está en el carrito no lo agregamos de nuevo
+      if (carritoActual.some((item) => item.productoId === producto.id)) {
+        return carritoActual
+      }
+      return [...carritoActual, { productoId: producto.id, nombre: producto.nombre, precioUnitario }]
+    })
   }
 
-  // Elimina solo el item cuyo uniqueId coincide (no afecta a los demás)
-  const removeFromCart = (uniqueId) => {
-    setCart((carritoActual) => carritoActual.filter((item) => item.uniqueId !== uniqueId))
+  // Elimina del carrito solo el item con ese productoId (no afecta a los demás)
+  const removeFromCart = (productoId) => {
+    setCart((carritoActual) => carritoActual.filter((item) => item.productoId !== productoId))
   }
 
   // Vacía el carrito completo
   const clearCart = () => setCart([])
+
+  // Ids de los productos que ya están en el carrito (sirve para cambiar el botón de cada tarjeta)
+  const idsEnCarrito = cart.map((item) => item.productoId)
 
   return (
     <div className="window" id="app-window">
@@ -53,7 +56,7 @@ function App() {
           </p>
         </section>
 
-        <ProductList productos={productos} onAgregarAlCarrito={addToCart} />
+        <ProductList idsEnCarrito={idsEnCarrito} onAgregarAlCarrito={addToCart} />
 
         <ShoppingCart cart={cart} onEliminar={removeFromCart} onVaciar={clearCart} />
       </main>

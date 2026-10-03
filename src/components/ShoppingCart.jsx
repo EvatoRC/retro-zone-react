@@ -4,6 +4,7 @@ import CartTotal from './CartTotal'
 /**
  * ShoppingCart
  * Muestra el resumen del carrito de compras.
+ * Renderizado condicional: mensaje de "carrito vacío" o la tabla con los productos.
  */
 function ShoppingCart({ cart, onEliminar, onVaciar }) {
   return (
@@ -15,6 +16,11 @@ function ShoppingCart({ cart, onEliminar, onVaciar }) {
           <p className="mb-0">Todavía no agregas juegos al carrito.</p>
         ) : (
           <>
+            {/* Mensaje dinámico con la cantidad de juegos (singular/plural) */}
+            <p>
+              Tienes <strong>{cart.length}</strong> {cart.length === 1 ? 'juego' : 'juegos'} en el carrito.
+            </p>
+
             <table className="table table-retro">
               <thead>
                 <tr>
@@ -25,7 +31,7 @@ function ShoppingCart({ cart, onEliminar, onVaciar }) {
               </thead>
               <tbody>
                 {cart.map((item) => (
-                  <CartItem key={item.uniqueId} item={item} onEliminar={onEliminar} />
+                  <CartItem key={item.productoId} item={item} onEliminar={onEliminar} />
                 ))}
               </tbody>
             </table>

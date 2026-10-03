@@ -127,3 +127,12 @@ body {
   padding: 1rem;
   text-align: center;
 }
+
+/* Botón de "En el carrito" (verde, para distinguirlo del botón normal) */
+.btn-en-carrito,
+.btn-en-carrito:disabled {
+  background-color: var(--color-verde);
+  border: var(--borde-inset);
+  color: var(--win-blanco);
+  opacity: 1;
+}
